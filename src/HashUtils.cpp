@@ -39,14 +39,6 @@ HashHolder Hash::operator()(size_t left_index, size_t right_index, size_t max_le
   return {hash1, hash2};
 }
 
-// // generating base for polynomial hash
-//   auto seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
-//   std::mt19937 mt_rand(seed);
-//   base = std::uniform_int_distribution<int>(1024, std::max(modulo1, modulo2))(mt_rand);
-//   if (base % 2 == 0) {
-//     --base;
-//   }
-
 // 2 classic modulos for polynomial hashes
 constexpr size_t MODULO1 = 1'000'000'123;
 constexpr size_t MODULO2 = 1'000'000'007;
