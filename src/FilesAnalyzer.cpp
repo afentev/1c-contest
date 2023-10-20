@@ -51,7 +51,8 @@ size_t FilesAnalyzer::get_longest_common_substring(std::ifstream&& stream1, std:
       HashHolder current_hash = hasher2(substring_start, right_index, max_length);
       if (std::binary_search(file1_hashes.begin(), file1_hashes.end(), current_hash)) {
         // success, we've found the same substring of length current_length
-
+        // collisions aren't so critical because it's borderline impossible that they will influence
+        // out answer at this point. However, we can add checking real strings to make us 100% sure
         substring_found = true;
         break;
       }
