@@ -7,7 +7,7 @@
 mkdir build
 cd build
 cmake ..
-build
+make
 ./dirdiff
 ```
 После этого запустится программа, и на экране появится предложение о вводе.
