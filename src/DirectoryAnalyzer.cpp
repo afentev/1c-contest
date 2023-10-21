@@ -90,7 +90,7 @@ void DirectoryAnalyzer::check_isdir(const std::string& filepath1, const std::str
   if (!std::filesystem::is_directory(path1)) {
     throw std::logic_error("Given path \"" + filepath1 + "\" is not a directory.");
   }
-  if (!std::filesystem::exists(path2)) {
+  if (!std::filesystem::is_directory(path2)) {
     throw std::logic_error("Given path \"" + filepath2 + "\" is not a directory.");
   }
 }
